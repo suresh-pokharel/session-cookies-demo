@@ -10,6 +10,11 @@
             setcookie('username', $username,$hour );
             setcookie('password', $password,$hour);
         }
+
+        //set session for successful login
+        session_start();
+        $_SESSION['login_user']=$username;
+        header("location:home.php");
     }
     
     if(isset($_COOKIE['username'])) {
